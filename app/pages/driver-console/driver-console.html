@@ -1,0 +1,44 @@
+<!--
+  Generated template for the DriverConsolePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-navbar *navbar>
+  <ion-title>updatePosition</ion-title>
+</ion-navbar>
+
+<ion-content padding class="driver-console">
+<ion-grid>
+    <ion-row>
+        <ion-item>
+            <ion-label stacked>Location</ion-label>
+            <ion-input type="text" [(ngModel)]="bLinePosition.city"></ion-input>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <ion-item>
+           <ion-label stacked>Plate</ion-label>
+           <ion-input type="text" [(ngModel)]="bLinePosition.plate"></ion-input>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <ion-item>
+            <ion-label stacked>Line</ion-label>
+            <ion-input type="text" [(ngModel)]="bLinePosition.line"></ion-input>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <ion-col width-45 center><ion-item><ion-input type="text" [(ngModel)]="bLinePosition.rtDirection.fStop"></ion-input></ion-item></ion-col>
+        <ion-col width-10 bottom><div>to</div></ion-col>
+        <ion-col width-45 center><ion-item><ion-input type="text" [(ngModel)]="bLinePosition.rtDirection.tStop"></ion-input></ion-item></ion-col>
+    </ion-row>
+</ion-grid>
+<button full round  [disabled]="startBtnDisabled" (click)="updatePosition()">
+  Start
+</button>
+<button full round  [disabled]="stopBtnDisabled" (click)="stopUpdatePosition()">
+  Stop
+</button>
+  
+</ion-content>

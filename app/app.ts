@@ -2,6 +2,7 @@ import {App, Platform} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {RecordRoutePage} from './pages/record-route/record-route';
 import {ShowPositionPage} from './pages/show-position/show-position';
+import {DriverConsolePage} from './pages/driver-console/driver-console';
 import {BusProvider} from './providers/bus-provider/bus-provider';
 import {AppSetting} from './app-setting';
 
@@ -11,7 +12,7 @@ import {AppSetting} from './app-setting';
   providers: [AppSetting, BusProvider]
 })
 export class MyApp {
-  rootPage: any = ShowPositionPage;
+  rootPage: any = DriverConsolePage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
