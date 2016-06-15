@@ -47,9 +47,10 @@ export class BaiduMapPage implements OnInit {
     // http://lbsyun.baidu.com/index.php?title=webapi/direction-api
     
     locateCurrentPosition(){
+    	var self= this;
    		console.log("enter locateCurrentPosition function");
 
-   		var lo = 113.5889010000;
+   		/*var lo = 113.5889010000;
    		var la = 22.2610410000;
    		var opt = {
 		            center: {
@@ -72,7 +73,7 @@ export class BaiduMapPage implements OnInit {
 
 	   			if (this.spotlightMap) {
 	   				this.spotlightMap.center(opt);
-	   			}
+	   			}*/
 
    		if (navigator){
    			navigator.geolocation.getCurrentPosition(function (position){
@@ -96,8 +97,8 @@ export class BaiduMapPage implements OnInit {
 
 	   			console.log(options);
 
-	   			if (this.spotlightMap) {
-	   				this.spotlightMap.center(options);
+	   			if (self.spotlightMap) {
+	   				self.spotlightMap.center(options);
 	   			}
 	   		}, function (error){
 	   			console.log(error);

@@ -128,7 +128,7 @@ export class SpotlightBaiduMap implements OnInit{
 
         var {BMap, map} = this;
         if (opts.center) {
-        	console.log(opts.cener);
+        	console.log(opts.center);
             map.setCenter(new BMap.Point(opts.center.longitude, opts.center.latitude));
         }
     }
