@@ -10,8 +10,8 @@ declare var window: any;
 export class AppSetting {
   public webApiServer: string = '';
   constructor() {
-    console.log('App running in development environment.');
-    this.webApiServer = 'http://localhost:3000';
+    console.log('App running in production environment.');
+    this.webApiServer = 'http://buscoming.azurewebsites.net';
     console.log('webApiServer = ' + this.webApiServer);
   }
 }

@@ -7,7 +7,8 @@
     "ionic-native": "^1.1.0",
     "ionicons": "3.0.0-alpha.3",
     "lodash": "^4.11.2",
-    "rxjs": "^5.0.0-beta.2"
+    "rxjs": "^5.0.0-beta.2",
+    "socket.io-client": "^1.4.6"
   },
   "devDependencies": {
     "del": "2.2.0",
@@ -28,19 +29,18 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "cordova-plugin-file"
+    "cordova-plugin-file",
+    {
+      "locator": "https://github.com/katzer/cordova-plugin-local-notifications",
+      "id": "de.appplant.cordova.plugin.local-notification"
+    }
   ],
   "cordovaPlatforms": [
-    "ios",
-    {
-      "platform": "ios",
-      "version": "",
-      "locator": "ios"
-    },
     {
       "platform": "android",
       "locator": "browser"
-    }
+    },
+    "ios"
   ],
   "name": "bus2",
   "description": "Bus2: An Ionic project"

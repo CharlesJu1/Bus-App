@@ -5,6 +5,7 @@ export function logError(prefix: String) {
     }
 }
 
+
 export function overWriteFile(fileEntry, dataObj) {
   // Create a FileWriter object for our FileEntry.
   console.log('overWriteFile: dataObj=' + dataObj);

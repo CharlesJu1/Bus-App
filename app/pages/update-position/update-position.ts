@@ -1,7 +1,8 @@
 import {Page, NavController} from 'ionic-angular';
 import {BusProvider} from '../../providers/bus-provider/bus-provider';
-import {BPosition} from '../../providers/bus-provider/bus';
+import {BLinePosition} from '../../providers/bus-provider/bus';
 import {logError} from '../../util/logUtil';
+import {GpsTestPage} from '../gps-test/gps-test';
 
 /*
   Generated class for the UpdatePositionPage page.
@@ -13,23 +14,42 @@ import {logError} from '../../util/logUtil';
   templateUrl: 'build/pages/update-position/update-position.html',
 })
 export class UpdatePositionPage {
+
+  lat: number;
+  long: number;
+  accuracy: number;
   constructor(public nav: NavController, private busProvider: BusProvider) {}
+
   updatePosition() {
     var update = function(position) {
-      var bPosition = new BPosition();
+      var bLinePosition = new BLinePosition();
 
-      // TODO Need a better way to initialize BPosition
-      bPosition.plate = 'YC12345';
-      bPosition.position.coords.lat = position.coords.latitude;
-      bPosition.position.coords.long = position.coords.longitude;
-      bPosition.position.heading = position.coords.heading;
-      bPosition.position.speed = position.coords.speed;
+      // TODO Need a better way to initialize BLinePosition
+      bLinePosition.city = 'ZH';
+      bLinePosition.line = 88;
+      bLinePosition.plate = 'YC12345';
+      bLinePosition.position.coords.lat = position.coords.latitude;
+      bLinePosition.position.coords.long = position.coords.longitude;
+      bLinePosition.position.heading = position.coords.heading;
+      bLinePosition.position.speed = position.coords.speed;
 
-      console.log('UpdatePositionPage:updatePosition bPosition =' + JSON.stringify(bPosition));
-      this.busProvider.updateBusPosition(bPosition)
+      this.lat = position.coords.latitude;
+      this.long = position.coords.longitude;
+      this.accuracy = position.coords.accuracy;
+
+      console.log('UpdatePositionPage:updatePosition bLinePosition =' + JSON.stringify(bLinePosition));
+      var t = new Date().getTime();
+      console.log('xxxxx time:' + t);
+      this.busProvider.updateBusPosition(bLinePosition)
     };
-    console.log('updating position');
+    var t = new Date().getTime();
+    console.log('updating position. Time=' + t);
+
     navigator.geolocation.getCurrentPosition(update.bind(this), logError('updatePosition: '));
-    
+
+  }
+
+  gotoGpsTestPage() {
+    this.nav.push(GpsTestPage);
   }
 }

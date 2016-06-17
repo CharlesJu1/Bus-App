@@ -11,12 +11,16 @@ export class AppSetting {
   public webApiServer: string = '';
   constructor() {
     // @if APP_ENV == 'DEVELOPMENT'
-    console.log('App running in development environment.');
+    console.log('App WebServer running in development environment.');
     this.webApiServer = 'http://localhost:3000';
+    // @endif
+    // @if APP_ENV == 'TEST_IIS'
+    console.log('App WebServer running in IIS on 10.154.14.141.');
+    this.webApiServer = 'http://10.154.14.141:3000';
     // @endif
     // @if APP_ENV == 'PRODUCTION'
     console.log('App running in production environment.');
-    this.webApiServer = 'http://windmill.azurewebsites.net/';
+    this.webApiServer = 'http://buscoming.azurewebsites.net';
     // @endif
     console.log('webApiServer = ' + this.webApiServer);
   }
