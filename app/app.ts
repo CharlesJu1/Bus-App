@@ -4,6 +4,9 @@ import {RecordRoutePage} from './pages/record-route/record-route';
 import {ShowPositionPage} from './pages/show-position/show-position';
 import {DriverConsolePage} from './pages/driver-console/driver-console';
 import {BusProvider} from './providers/bus-provider/bus-provider';
+import {BusRoutePage} from './pages/bus-route/bus-route';
+import {FileListPage} from './pages/file-list/file-list';
+import {MainNavigationPage} from './pages/main-navigation/main-navigation';
 import {AppSetting} from './app-setting';
 
 @App({
@@ -12,7 +15,7 @@ import {AppSetting} from './app-setting';
   providers: [AppSetting, BusProvider]
 })
 export class MyApp {
-  rootPage: any = DriverConsolePage;
+  rootPage: any = MainNavigationPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

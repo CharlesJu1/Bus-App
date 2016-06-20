@@ -1,0 +1,24 @@
+<ion-navbar *navbar>
+  <ion-title>Hello Ionic</ion-title>
+</ion-navbar>
+
+
+<ion-content padding class="getting-started">
+
+  <ion-list>
+    
+     <li *ngFor="#item of items">{{item.title}}
+            <input type="checkbox" [(ngModel)]="item.checked" />
+     </li>
+
+  </ion-list>
+  
+  <div padding>
+      <button round block (click)="uploadBusRoute()">上传数据</button>
+  </div>
+
+  <div padding>
+      <button round block (click)="deleteFiles()">删除文件</button>
+  </div>
+
+</ion-content>
